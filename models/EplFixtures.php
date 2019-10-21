@@ -13,6 +13,9 @@ use Yii;
  * @property string $match_time
  * @property string $match_date
  * @property string $match_tip
+ * @property string $match_status
+ * @property int $home_result
+ * @property int $away_result
  */
 class EplFixtures extends \yii\db\ActiveRecord
 {
@@ -32,6 +35,7 @@ class EplFixtures extends \yii\db\ActiveRecord
         return [
             [['match_time', 'match_date'], 'required'],
             [['match_time', 'match_date'], 'safe'],
+            [['match_status', 'home_result', 'away_result'], 'integer'],
             [['home_team', 'away_team', 'match_tip'], 'string', 'max' => 20],
         ];
     }
@@ -48,6 +52,9 @@ class EplFixtures extends \yii\db\ActiveRecord
             'match_time' => 'Match Time',
             'match_date' => 'Match Date',
             'match_tip' => 'Match Tip',
+            'match_status' => 'Match Status',
+            'home_result' => 'Home Result',
+            'away_result' => 'Away Result',
         ];
     }
 }

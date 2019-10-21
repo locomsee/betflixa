@@ -59,7 +59,7 @@ class DefaultController extends Controller
         $model=new EplFixtures();
 
         $result=$model::find()->asArray()->all();
-        if($result!=null){
+        if($result){
             $response['code']=00;
             $response['fixtures']=$result;
             return $this->asJson($response);
